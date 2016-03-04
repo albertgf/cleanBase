@@ -6,18 +6,29 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
     }
 }
 
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+
 allprojects {
+    ext {
+        androidApplicationId = 'com.albertgf.cleanbase'
+        androidVersionCode = 1
+        androidVersionName = "${versionMajor}.${versionMinor}.${versionPatch}"
+        testApplicationId = 'com.albertgf.cleanbase.test'
+
+        //Android
+        androidBuildToolsVersion = "23.0.2"
+        androidMinSdkVersion = 15
+        androidTargetSdkVersion = 23
+        androidCompileSdkVersion = 23
+    }
+
     repositories {
         jcenter()
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
