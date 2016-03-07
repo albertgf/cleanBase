@@ -24,6 +24,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
     //test
     testCompile 'junit:junit:4.12'
     //android
